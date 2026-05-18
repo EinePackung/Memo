@@ -1,12 +1,22 @@
 package com.yeseok.memo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Memo {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String content;
 
-    public Memo (long id, String content) {
-        this.id = id;
+    protected Memo() {
+    }
+
+    public Memo (String content) {
         this.content = content;
     }
 
